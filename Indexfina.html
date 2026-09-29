@@ -1,0 +1,2504 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0"
+>
+
+<title>TSAF AUTO INC. | Mécanique & Diagnostic</title>
+
+<meta
+  name="description"
+  content="TSAF AUTO INC. — Mécanique générale, diagnostic automobile, entretien, freins, suspension et direction à Saint-Apollinaire."
+>
+
+<style>
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+  --black: #0e1011;
+  --dark: #171a1c;
+  --dark2: #202427;
+  --yellow: #c79a2b;
+  --yellow-light: #e0b44d;
+  --white: #f2efe6;
+  --muted: #a8aaa8;
+  --steel: #697178;
+  --border: rgba(255,255,255,.09);
+  --success: #76aa7b;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+/* =========================================================
+   SCROLL PROGRESS
+========================================================= */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--yellow-light);
+  z-index: 9999;
+  box-shadow: 0 0 12px rgba(224,180,77,.5);
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(14,16,17,.96);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 58px;
+  height: 58px;
+  border: 2px solid var(--yellow);
+  border-radius: 50%;
+  background: #141618;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 4px rgba(199,154,43,.07);
+}
+
+.logo:before {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(224,180,77,.45);
+  border-radius: 50%;
+}
+
+.piston {
+  position: absolute;
+  width: 8px;
+  height: 25px;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+
+.piston:before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: -3px;
+  width: 14px;
+  height: 7px;
+  background: var(--yellow);
+  border-radius: 2px;
+}
+
+.piston.one {
+  transform: rotate(45deg);
+}
+
+.piston.two {
+  transform: rotate(-45deg);
+}
+
+
+/* =========================================================
+   BRAND TEXT
+========================================================= */
+
+.brand-text strong {
+  display: block;
+  font-size: 17px;
+  letter-spacing: 2px;
+}
+
+.brand-text span {
+  display: block;
+  color: var(--yellow-light);
+  font-size: 9px;
+  letter-spacing: 2.5px;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  color: #c7c8c5;
+  font-size: 13px;
+  transition: .2s;
+}
+
+nav a:hover {
+  color: var(--yellow-light);
+}
+
+.nav-button {
+  background: var(--yellow);
+  color: #111 !important;
+  padding: 11px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  min-height: 88vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  background: #0e1011;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(8,10,11,.68);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-content {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  color: var(--yellow-light);
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+h1 {
+  max-width: 760px;
+  font-size: clamp(45px,7vw,82px);
+  line-height: .98;
+  letter-spacing: -3px;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  color: var(--yellow-light);
+}
+
+.hero p {
+  max-width: 650px;
+  color: #c6c7c4;
+  font-size: 18px;
+  margin-bottom: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+
+/* =========================================================
+   BOUTONS
+========================================================= */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 22px;
+  border-radius: 5px;
+  border: 1px solid var(--yellow);
+  cursor: pointer;
+  font-weight: bold;
+  transition: .25s;
+}
+
+.btn-primary {
+  background: var(--yellow);
+  color: #111;
+}
+
+.btn-primary:hover {
+  background: var(--yellow-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(199,154,43,.18);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,.03);
+  color: var(--white);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,.08);
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+section {
+  padding: 90px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-label {
+  color: var(--yellow-light);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 11px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: clamp(32px,5vw,54px);
+  line-height: 1.05;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+}
+
+.section-intro {
+  max-width: 680px;
+  color: var(--muted);
+  margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   PHILOSOPHIE
+========================================================= */
+
+.philosophy {
+  background: var(--dark);
+}
+
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.philosophy-text p {
+  color: #bfc1be;
+  margin-bottom: 17px;
+}
+
+.quote-box {
+  margin-top: 25px;
+  padding: 22px 25px;
+  border-left: 3px solid var(--yellow);
+  background: rgba(255,255,255,.025);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.tool-image {
+  min-height: 450px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0,0,0,.75)
+    ),
+    url("https://images.unsplash.com/photo-1530046339160-ce3e530c7d2f?auto=format&fit=crop&w=1200&q=85")
+    center / cover;
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+  background: var(--black);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
+}
+
+.service-card {
+  min-height: 190px;
+  padding: 28px;
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  transition: .3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(199,154,43,.5);
+  box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+
+.service-number {
+  color: var(--yellow);
+  font-family: monospace;
+  font-size: 12px;
+  margin-bottom: 22px;
+}
+
+.service-card h3 {
+  margin-bottom: 9px;
+  font-size: 19px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   DIAGNOSTIC
+========================================================= */
+
+.diagnostic {
+  background: var(--dark);
+}
+
+.diagnostic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.diagnostic-image {
+  min-height: 450px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background:
+    linear-gradient(
+      180deg,
+      transparent,
+      rgba(0,0,0,.75)
+    ),
+    url("https://images.unsplash.com/photo-1486006920555-c77dcf18193c?auto=format&fit=crop&w=1200&q=85")
+    center / cover;
+}
+
+.diagnostic-list {
+  list-style: none;
+  margin-top: 25px;
+}
+
+.diagnostic-list li {
+  position: relative;
+  padding: 13px 0 13px 28px;
+  color: #c6c7c4;
+  border-bottom: 1px solid var(--border);
+}
+
+.diagnostic-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--yellow-light);
+  font-weight: bold;
+}
+
+
+/* =========================================================
+   GALERIE
+========================================================= */
+
+.workshop {
+  background: var(--black);
+}
+
+.workshop-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+}
+
+.workshop-media {
+  width: 100%;
+  min-height: 350px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+  background: #171a1c;
+  transition: .35s;
+}
+
+.workshop-media:hover {
+  transform: scale(1.015);
+  border-color: rgba(199,154,43,.45);
+}
+
+.workshop-media img {
+  display: block;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  transition: transform .6s;
+}
+
+.workshop-media:hover img {
+  transform: scale(1.04);
+}
+
+
+/* =========================================================
+   VIDÉO 2
+========================================================= */
+
+.gallery-video-section {
+  position: relative;
+  min-height: 520px;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+  background: #0b0d0e;
+}
+
+.gallery-background-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  pointer-events: none;
+}
+
+.gallery-video-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(8,10,11,.60);
+  z-index: -1;
+}
+
+.gallery-video-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 100px 20px;
+}
+
+.gallery-video-content h2 {
+  max-width: 700px;
+}
+
+.gallery-video-content p {
+  max-width: 600px;
+  color: #d0d1ce;
+  font-size: 17px;
+}
+
+
+/* =========================================================
+   POURQUOI TSAF
+========================================================= */
+
+.trust-section {
+  background: #111415;
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 15px;
+}
+
+.trust-card {
+  position: relative;
+  padding: 27px 22px 25px;
+  text-align: left;
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  transition: .3s;
+  overflow: hidden;
+}
+
+.trust-card:hover {
+  border-color: rgba(199,154,43,.45);
+  transform: translateY(-4px);
+}
+
+.trust-number {
+  display: block;
+  color: var(--yellow-light);
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.trust-card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.trust-card .details {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: .35s ease;
+}
+
+.trust-card.open .details {
+  max-height: 180px;
+  opacity: 1;
+}
+
+.trust-card .details p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  padding-top: 7px;
+}
+
+.plus-button {
+  position: absolute;
+  right: 17px;
+  top: 18px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgba(224,180,77,.45);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--yellow-light);
+  font-size: 21px;
+  line-height: 25px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.trust-card.open .plus-button {
+  transform: rotate(45deg);
+  background: rgba(199,154,43,.12);
+}
+
+
+/* =========================================================
+   TARIFICATION
+========================================================= */
+
+.pricing {
+  background: var(--dark);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 850px;
+}
+
+.price-card {
+  padding: 35px;
+  background: #111415;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(199,154,43,.5);
+}
+
+.price-card.featured {
+  border-color: rgba(199,154,43,.6);
+}
+
+.price-label {
+  color: var(--yellow-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 10px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.price span {
+  font-size: 17px;
+  color: var(--muted);
+  font-weight: normal;
+}
+
+.price-card p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-top: 17px;
+}
+
+
+/* =========================================================
+   RENDEZ-VOUS
+========================================================= */
+
+.booking {
+  background: #151719;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 35px;
+  align-items: start;
+}
+
+.booking-info {
+  position: sticky;
+  top: 105px;
+}
+
+.contact-box {
+  margin-top: 28px;
+  padding: 25px;
+  background: var(--dark);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+}
+
+.contact-row {
+  margin-bottom: 17px;
+}
+
+.contact-row:last-child {
+  margin-bottom: 0;
+}
+
+.contact-row small {
+  display: block;
+  color: var(--yellow-light);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 9px;
+}
+
+.contact-row a,
+.contact-row span {
+  color: #e0e1dc;
+}
+
+.booking-card {
+  padding: 30px;
+  background: #202427;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+
+.booking-card h3 {
+  font-size: 25px;
+  margin-bottom: 7px;
+}
+
+.booking-card > p {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 25px;
+}
+
+
+/* =========================================================
+   FORMULAIRE
+========================================================= */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  margin-bottom: 14px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label {
+  display: block;
+  color: #bbbdbb;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  margin-bottom: 7px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 13px;
+  background: #151719;
+  color: var(--white);
+  border: 1px solid #363b3f;
+  border-radius: 4px;
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--yellow);
+  box-shadow: 0 0 0 2px rgba(199,154,43,.08);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-submit {
+  width: 100%;
+  border: none;
+}
+
+
+/* =========================================================
+   MESSAGE FORMULAIRE
+========================================================= */
+
+#formMessage {
+  display: none;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  background: rgba(118,170,123,.13);
+  border: 1px solid rgba(118,170,123,.45);
+  color: #d0e4d2;
+  font-size: 15px;
+}
+
+
+  <section
+  id="contact"
+>
+
+  <div class="container">
+
+    <div class="section-label reveal">
+      Nous trouver
+    </div>
+
+    <h2 class="reveal">
+      TSAF Auto Inc.
+    </h2>
+
+    <p class="section-intro reveal">
+      Pour une question, une demande de diagnostic ou un rendez-vous,
+      communiquez directement avec nous.
+    </p>
+
+
+    <div class="info-grid">
+
+
+      <!-- INFORMATIONS -->
+
+      <div class="info-card reveal-left">
+
+        <div class="info-content">
+
+          <div class="contact-row">
+
+            <small>
+              Téléphone
+            </small>
+
+            <a href="tel:14182626084">
+              418 262-6084
+            </a>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>
+              Adresse
+            </small>
+
+            <span>
+              324 Rue Laurier #8<br>
+              Saint-Apollinaire, QC G0S 2E0
+            </span>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>
+              Courriel
+            </small>
+
+            <a href="mailto:tsafauto@gmail.com">
+              tsafauto@gmail.com
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- GOOGLE MAPS -->
+
+      <div class="info-card reveal-right">
+
+        <div class="info-content">
+
+          <div class="section-label">
+            Google Maps
+          </div>
+
+          <iframe
+            class="map"
+            src="https://www.google.com/maps?q=324%20Rue%20Laurier%20%238%2C%20Saint-Apollinaire%2C%20QC%20G0S%202E0&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+  padding: 40px 20px;
+  background: #0b0d0e;
+  border-top: 1px solid var(--border);
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer-brand {
+  color: var(--yellow-light);
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+footer p {
+  color: #777;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   ANIMATIONS AU SCROLL
+========================================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(35px);
+  transition:
+    opacity .7s ease,
+    transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  nav {
+    display: none;
+  }
+
+  .philosophy-grid,
+  .diagnostic-grid,
+  .booking-layout,
+  .info-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .workshop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-info {
+    position: static;
+  }
+
+}
+
+
+@media (max-width: 560px) {
+
+  section {
+    padding: 65px 16px;
+  }
+
+  .nav {
+    padding: 10px 14px;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-text strong {
+    font-size: 14px;
+  }
+
+  .brand-text span {
+    font-size: 7px;
+  }
+
+  h1 {
+    font-size: 47px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .service-grid,
+  .trust-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-card {
+    padding: 21px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .gallery-video-section {
+    min-height: 430px;
+  }
+
+  .workshop-media,
+  .workshop-media img {
+    min-height: 260px;
+    height: 260px;
+  }
+
+  .price-card {
+    padding: 28px;
+  }
+
+  .diagnostic-image {
+    min-height: 300px;
+  }
+
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="scroll-progress"></div>
+
+
+<header>
+
+  <div class="nav">
+
+    <a href="#accueil" class="brand">
+
+      <div class="logo">
+
+        <div class="piston one"></div>
+        <div class="piston two"></div>
+
+      </div>
+
+      <div class="brand-text">
+
+        <strong>TSAF AUTO INC.</strong>
+
+        <span>
+          MÉCANIQUE • DIAGNOSTIC • ENTRETIEN
+        </span>
+
+      </div>
+
+    </a>
+
+
+    <nav>
+
+      <a href="#services">Services</a>
+
+      <a href="#diagnostic">Diagnostic</a>
+
+      <a href="#atelier">Atelier</a>
+
+      <a href="#tarifs">Tarifs</a>
+
+      <a href="#contact">Contact</a>
+
+      <a
+        href="#rendez-vous"
+        class="nav-button"
+      >
+        Prendre rendez-vous
+      </a>
+
+    </nav>
+
+  </div>
+
+</header>
+
+
+<main>
+
+
+<section
+  class="hero"
+  id="accueil"
+>
+
+  <video
+    class="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+  >
+
+    <source
+      src="1000003892.mp4"
+      type="video/mp4"
+    >
+
+  </video>
+
+
+  <div class="hero-content reveal">
+
+    <div class="eyebrow">
+      Garage automobile indépendant
+    </div>
+
+    <h1>
+      La mécanique avec
+      <span>méthode.</span>
+    </h1>
+
+    <p>
+      Diagnostic précis, entretien rigoureux et réparations
+      réfléchies. Chez TSAF Auto, chaque problème commence
+      par une vérification sérieuse avant de proposer une solution.
+    </p>
+
+
+    <div class="hero-actions">
+
+      <a
+        href="#rendez-vous"
+        class="btn btn-primary"
+      >
+        Prendre rendez-vous
+      </a>
+
+      <a
+        href="tel:14182626084"
+        class="btn btn-secondary"
+      >
+        418 262-6084
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="philosophy"
+  id="philosophie"
+>
+
+  <div class="container">
+
+    <div class="philosophy-grid">
+
+      <div class="philosophy-text reveal-left">
+
+        <div class="section-label">
+          Notre philosophie
+        </div>
+
+        <h2>
+          Comprendre avant remplacer.
+        </h2>
+
+        <p>
+          Un voyant allumé ou un bruit inhabituel ne signifie pas
+          automatiquement qu'une pièce doit être remplacée.
+        </p>
+
+        <p>
+          TSAF Auto privilégie le diagnostic et la compréhension
+          du problème avant d'effectuer une réparation.
+        </p>
+
+        <p>
+          L'objectif est simple : trouver la vraie cause du problème,
+          expliquer clairement les options et permettre au propriétaire
+          du véhicule de prendre une décision éclairée.
+        </p>
+
+        <div class="quote-box">
+          « Un bon diagnostic évite souvent une mauvaise réparation. »
+        </div>
+
+      </div>
+
+
+      <div class="tool-image reveal-right"></div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="services"
+  id="services"
+>
+
+  <div class="container">
+
+    <div class="section-label reveal">
+      Services
+    </div>
+
+    <h2 class="reveal">
+      L'essentiel de la mécanique automobile.
+    </h2>
+
+    <p class="section-intro reveal">
+      De l'entretien courant aux problèmes mécaniques plus complexes,
+      TSAF Auto offre une approche structurée et transparente.
+    </p>
+
+
+    <div class="service-grid">
+
+      <div class="service-card reveal">
+        <div class="service-number">01 /</div>
+        <h3>Mécanique générale</h3>
+        <p>
+          Réparations et entretien des principaux systèmes mécaniques
+          du véhicule.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-number">02 /</div>
+        <h3>Diagnostic automobile</h3>
+        <p>
+          Recherche de pannes électroniques, mécaniques et électriques
+          avec outils de diagnostic professionnels.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-number">03 /</div>
+        <h3>Freins</h3>
+        <p>
+          Inspection, entretien et réparation du système de freinage.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-number">04 /</div>
+        <h3>Suspension & direction</h3>
+        <p>
+          Vérification des composants de suspension, direction,
+          roulements et éléments de liaison.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-number">05 /</div>
+        <h3>Entretien</h3>
+        <p>
+          Entretien préventif, vidanges, inspections et maintenance
+          selon les besoins du véhicule.
+        </p>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-number">06 /</div>
+        <h3>Problèmes complexes</h3>
+        <p>
+          Recherche méthodique lorsque le problème ne se règle pas
+          simplement avec un remplacement de pièce.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="diagnostic"
+  id="diagnostic"
+>
+
+  <div class="container">
+
+    <div class="diagnostic-grid">
+
+      <div class="diagnostic-image reveal-left"></div>
+
+      <div class="reveal-right">
+
+        <div class="section-label">
+          Diagnostic
+        </div>
+
+        <h2>
+          La technologie au service
+          du jugement humain.
+        </h2>
+
+        <p class="section-intro">
+          Les outils électroniques permettent d'obtenir énormément
+          d'informations. Mais les données doivent être interprétées
+          correctement.
+        </p>
+
+        <ul class="diagnostic-list">
+
+          <li>
+            Lecture et analyse des codes de diagnostic
+          </li>
+
+          <li>
+            Analyse des données en temps réel
+          </li>
+
+          <li>
+            Vérification des capteurs et systèmes électroniques
+          </li>
+
+          <li>
+            Comparaison des données avec le comportement réel du véhicule
+          </li>
+
+          <li>
+            Confirmation de la cause avant remplacement d'une pièce
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="workshop"
+  id="atelier"
+>
+
+  <div class="container">
+
+    <div class="section-label reveal">
+      TSAF Auto
+    </div>
+
+    <h2 class="reveal">
+      L'atelier derrière
+      le travail.
+    </h2>
+
+    <p class="section-intro reveal">
+      Un espace dédié au diagnostic, à la mécanique et au travail
+      bien fait. Découvrez TSAF Auto et le travail réalisé par
+      notre équipe.
+    </p>
+
+
+    <div class="workshop-grid">
+
+      <div class="workshop-media reveal">
+
+        <img
+          src="image3.jpg"
+          alt="TSAF Auto - Atelier"
+          loading="lazy"
+        >
+
+      </div>
+
+
+      <div class="workshop-media reveal">
+
+        <img
+          src="image4.jpg"
+          alt="TSAF Auto - Atelier"
+          loading="lazy"
+        >
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="gallery-video-section">
+
+  <video
+    class="gallery-background-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+  >
+
+    <source
+      src="video2.mp4"
+      type="video/mp4"
+    >
+
+  </video>
+
+
+  <div class="gallery-video-content reveal">
+
+    <div class="section-label">
+      TSAF AUTO INC.
+    </div>
+
+    <h2>
+      Le travail se voit.
+      Le diagnostic se ressent.
+    </h2>
+
+    <p>
+      Chaque véhicule mérite une vérification sérieuse,
+      une explication claire et une réparation réalisée
+      avec méthode.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="trust-section">
+
+  <div class="container">
+
+    <div class="section-label reveal">
+      Notre approche
+    </div>
+
+    <h2 class="reveal">
+      Ce qui fait la différence.
+    </h2>
+
+    <p class="section-intro reveal">
+      Quatre principes qui guident chaque intervention chez TSAF Auto.
+    </p>
+
+
+    <div class="trust-grid">
+
+
+      <div class="trust-card reveal">
+
+        <span class="trust-number">
+          01
+        </span>
+
+        <h3>
+          Diagnostic avant réparation
+        </h3>
+
+        <button
+          class="plus-button"
+          type="button"
+          aria-label="Afficher les détails"
+        >
+          +
+        </button>
+
+        <div class="details">
+
+          <p>
+            Avant de remplacer une pièce, nous cherchons à confirmer
+            la cause réelle du problème. Les symptômes, les codes,
+            les mesures et le comportement du véhicule sont comparés
+            afin d'éviter les remplacements inutiles.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="trust-card reveal">
+
+        <span class="trust-number">
+          02
+        </span>
+
+        <h3>
+          Explications claires
+        </h3>
+
+        <button
+          class="plus-button"
+          type="button"
+          aria-label="Afficher les détails"
+        >
+          +
+        </button>
+
+        <div class="details">
+
+          <p>
+            Le propriétaire doit comprendre ce qui se passe avec
+            son véhicule. Le problème constaté, les réparations
+            possibles et les priorités sont expliqués simplement,
+            sans jargon inutile.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="trust-card reveal">
+
+        <span class="trust-number">
+          03
+        </span>
+
+        <h3>
+          Travail méthodique
+        </h3>
+
+        <button
+          class="plus-button"
+          type="button"
+          aria-label="Afficher les détails"
+        >
+          +
+        </button>
+
+        <div class="details">
+
+          <p>
+            Chaque intervention suit une logique : vérifier,
+            mesurer, identifier la cause, réparer puis contrôler
+            le résultat. Cette méthode permet de réduire les
+            erreurs et de travailler efficacement.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="trust-card reveal">
+
+        <span class="trust-number">
+          04
+        </span>
+
+        <h3>
+          Décision finale au client
+        </h3>
+
+        <button
+          class="plus-button"
+          type="button"
+          aria-label="Afficher les détails"
+        >
+          +
+        </button>
+
+        <div class="details">
+
+          <p>
+            TSAF Auto présente les constatations et les options.
+            Le client conserve le contrôle de la décision concernant
+            les réparations à effectuer sur son véhicule.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="pricing"
+  id="tarifs"
+>
+
+  <div class="container">
+
+    <div class="section-label reveal">
+      Tarification
+    </div>
+
+    <h2 class="reveal">
+      Une tarification claire.
+    </h2>
+
+    <p class="section-intro reveal">
+      Le taux horaire est établi selon le type d'intervention
+      et la situation concernant les pièces.
+    </p>
+
+
+    <div class="pricing-grid">
+
+
+      <div class="price-card featured reveal">
+
+        <div class="price-label">
+          Tarif régulier
+        </div>
+
+        <div class="price">
+          95$
+          <span>/ heure</span>
+        </div>
+
+        <p>
+          Taux horaire pour les travaux réalisés avec les pièces
+          fournies selon les modalités convenues avec TSAF Auto.
+        </p>
+
+      </div>
+
+
+      <div class="price-card reveal">
+
+        <div class="price-label">
+          Pièces fournies par le client
+        </div>
+
+        <div class="price">
+          115$
+          <span>/ heure</span>
+        </div>
+
+        <p>
+          Lorsque le client fournit lui-même les pièces nécessaires
+          à la réparation.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  class="booking"
+  id="rendez-vous"
+>
+
+  <div class="container">
+
+    <div class="booking-layout">
+
+
+      <div class="booking-info reveal-left">
+
+        <div class="section-label">
+          Rendez-vous
+        </div>
+
+        <h2>
+          Parlons de votre véhicule.
+        </h2>
+
+        <p class="section-intro">
+          Remplissez le formulaire avec les informations concernant
+          votre véhicule et le problème rencontré. Fabrice prendra
+          connaissance de votre demande et communiquera avec vous
+          pour confirmer le rendez-vous.
+        </p>
+
+
+        <div class="contact-box">
+
+          <div class="contact-row">
+
+            <small>
+              Adresse
+            </small>
+
+            <span>
+              324 Rue Laurier #8<br>
+              Saint-Apollinaire, QC G0S 2E0
+            </span>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>
+              Courriel
+            </small>
+
+            <a href="mailto:tsafauto@gmail.com">
+              tsafauto@gmail.com
+            </a>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>
+              Tarif horaire
+            </small>
+
+            <span>
+              95$ / heure
+            </span>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>
+              Pièces fournies par le client
+            </small>
+
+            <span>
+              115$ / heure
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="booking-card reveal-right">
+
+        <h3>
+          Demande de rendez-vous
+        </h3>
+
+        <p>
+          Remplissez les informations ci-dessous. Votre demande
+          sera transmise à TSAF Auto.
+        </p>
+
+
+        <div id="formMessage">
+
+          Votre demande a bien été envoyée.
+          Merci! TSAF Auto communiquera avec vous pour confirmer
+          votre rendez-vous.
+
+        </div>
+
+
+        <form
+          id="bookingForm"
+          action="https://formspree.io/f/xqpzonvy"
+          method="POST"
+        >
+
+
+          <input
+            type="hidden"
+            name="_subject"
+            value="Nouvelle demande de rendez-vous - TSAF Auto"
+          >
+
+
+          <div class="form-grid">
+
+
+            <div class="field">
+
+              <label for="name">
+                Nom
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="Nom"
+                placeholder="Votre nom"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="phone">
+                Téléphone
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="Téléphone"
+                placeholder="418 000-0000"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="email">
+                Courriel
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="Courriel"
+                placeholder="votre@email.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="vehicle">
+                Véhicule
+              </label>
+
+              <input
+                type="text"
+                id="vehicle"
+                name="Véhicule"
+                placeholder="Ex. Honda Civic 2018"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="service">
+                Service demandé
+              </label>
+
+              <select
+                id="service"
+                name="Service demandé"
+                required
+              >
+
+                <option value="">
+                  Choisir un service
+                </option>
+
+                <option>
+                  Mécanique générale
+                </option>
+
+                <option>
+                  Diagnostic automobile
+                </option>
+
+                <option>
+                  Freins
+                </option>
+
+                <option>
+                  Suspension & direction
+                </option>
+
+                <option>
+                  Entretien
+                </option>
+
+                <option>
+                  Problème complexe
+                </option>
+
+                <option>
+                  Autre
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="date">
+                Date souhaitée
+              </label>
+
+              <input
+                type="date"
+                id="date"
+                name="Date souhaitée"
+              >
+
+            </div>
+
+
+            <div class="field full">
+
+              <label for="message">
+                Décrivez le problème
+              </label>
+
+              <textarea
+                id="message"
+                name="Description du problème"
+                placeholder="Décrivez le problème, les symptômes ou le travail désiré..."
+                required
+              ></textarea>
+
+            </div>
+
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="btn btn-primary form-submit"
+          >
+            Envoyer ma demande
+          </button>
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section
+  id="contact"
+>
+
+  <div class="container">
+
+    <div class="section-label reveal">
+      Nous trouver
+    </div>
+
+    <h2 class="reveal">
+      TSAF Auto Inc.
+    </h2>
+
+    <p class="section-intro reveal">
+      Pour une question, une demande de diagnostic ou un rendez-vous,
+      communiquez directement avec nous.
+    </p>
+
+
+    <div class="info-grid">
+
+
+      <div class="info-card reveal-left">
+
+        <div class="info-content">
+
+          <div class="contact-row">
+
+            <small>
+              Téléphone
+            </small>
+
+            <a href="tel:14182626084">
+              418 262-6084
+            </a>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>
+              Adresse
+            </small>
+
+            <span>
+              324 Rue Laurier #8, Saint-Apollinaire, QC G0S 2E0
+            </span>
+
+          </div>
+
+
+          <div class="contact-row">
+
+            <small>
+              Services
+            </small>
+
+            <span>
+              Mécanique générale • Diagnostic • Entretien
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="info-card reveal-right">
+
+        <div class="info-content">
+
+          <div class="section-label">
+            Heures d'ouverture
+          </div>
+
+          <div class="hours-row">
+            <span>Lundi</span>
+            <span>9h00 – 18h00</span>
+          </div>
+
+          <div class="hours-row">
+            <span>Mardi</span>
+            <span>9h00 – 18h00</span>
+          </div>
+
+          <div class="hours-row">
+            <span>Mercredi</span>
+            <span>9h00 – 18h00</span>
+          </div>
+
+          <div class="hours-row">
+            <span>Jeudi</span>
+            <span>9h00 – 18h00</span>
+          </div>
+
+          <div class="hours-row">
+            <span>Vendredi</span>
+            <span>9h00 – 18h00</span>
+          </div>
+
+          <div class="hours-row">
+            <span>Samedi</span>
+            <span>9h00 – 18h00</span>
+          </div>
+
+          <div class="hours-row">
+            <span>Dimanche</span>
+            <span class="closed">Fermé</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+
+</main>
+
+
+<footer>
+
+  <div class="footer-inner">
+
+    <div class="footer-brand">
+      TSAF AUTO INC.
+    </div>
+
+    <p>
+      © 2026 TSAF Auto Inc. — Mécanique & Diagnostic
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   BARRE DE PROGRESSION
+========================================================= */
+
+window.addEventListener("scroll", function() {
+
+  const scrollTop = window.scrollY;
+
+  const documentHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+  const progress =
+    documentHeight > 0
+      ? (scrollTop / documentHeight) * 100
+      : 0;
+
+  document.querySelector(".scroll-progress").style.width =
+    progress + "%";
+
+});
+
+
+/* =========================================================
+   ANIMATIONS AU SCROLL
+========================================================= */
+
+const revealElements =
+  document.querySelectorAll(
+    ".reveal, .reveal-left, .reveal-right"
+  );
+
+
+const observer =
+  new IntersectionObserver(
+
+    function(entries) {
+
+      entries.forEach(function(entry) {
+
+        if (entry.isIntersecting) {
+
+          entry.target.classList.add("visible");
+
+        }
+
+      });
+
+    },
+
+    {
+      threshold: 0.12
+    }
+
+  );
+
+
+revealElements.forEach(function(element) {
+
+  observer.observe(element);
+
+});
+
+
+/* =========================================================
+   CARTES AVEC +
+========================================================= */
+
+const trustCards =
+  document.querySelectorAll(".trust-card");
+
+
+trustCards.forEach(function(card) {
+
+  const button =
+    card.querySelector(".plus-button");
+
+
+  button.addEventListener("click", function() {
+
+    const isOpen =
+      card.classList.contains("open");
+
+
+    trustCards.forEach(function(otherCard) {
+
+      otherCard.classList.remove("open");
+
+    });
+
+
+    if (!isOpen) {
+
+      card.classList.add("open");
+
+    }
+
+  });
+
+});
+
+
+/* =========================================================
+   FORMULAIRE FORMSPREE
+========================================================= */
+
+const bookingForm =
+  document.getElementById("bookingForm");
+
+
+const formMessage =
+  document.getElementById("formMessage");
+
+
+bookingForm.addEventListener(
+  "submit",
+  async function(event) {
+
+    event.preventDefault();
+
+
+    const button =
+      bookingForm.querySelector("button");
+
+
+    button.disabled = true;
+
+    button.textContent =
+      "Envoi en cours...";
+
+
+    const formData =
+      new FormData(bookingForm);
+
+
+    try {
+
+      const response =
+        await fetch(
+          bookingForm.action,
+          {
+            method: "POST",
+            body: formData,
+            headers: {
+              "Accept": "application/json"
+            }
+          }
+        );
+
+
+      if (response.ok) {
+
+        bookingForm.reset();
+
+        formMessage.style.display =
+          "block";
+
+
+        button.disabled =
+          false;
+
+
+        button.textContent =
+          "Envoyer ma demande";
+
+
+        formMessage.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+
+      } else {
+
+        throw new Error(
+          "Erreur Formspree"
+        );
+
+      }
+
+
+    } catch (error) {
+
+      alert(
+        "Impossible d'envoyer la demande pour le moment. Veuillez réessayer ou appeler le 418 262-6084."
+      );
+
+
+      button.disabled =
+        false;
+
+
+      button.textContent =
+        "Envoyer ma demande";
+
+    }
+
+  }
+);
+
+
+/* =========================================================
+   VIDÉOS
+========================================================= */
+
+document.querySelectorAll("video").forEach(function(video) {
+
+  video.muted = true;
+
+  video.setAttribute("playsinline", "");
+
+});
+
+
+</script>
+
+
+</body>
+
+</html>
